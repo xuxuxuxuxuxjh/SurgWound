@@ -21,7 +21,7 @@ Each image is accompanied by high-quality labels covering six surgical wound cha
 
 **SurgWound-Bench** is the first multimodal benchmark for surgical wound analysis, which includes two tasks: SurgWound-VQA and SurgWound-Report
 
-![](D:\Desktop\Research\Project\Wound\SurgWound\SurgWound\imgs\Architecture.png)
+![](imgs\Architecture.png)
 
 
 
@@ -29,13 +29,13 @@ Each image is accompanied by high-quality labels covering six surgical wound cha
 
  In the first stage, five of the six wound characteristics are predicted by specialized models: *Healing Status*, *Closure Method*, *Exudate Type*, *Erythema*, and *Edema*. *Location* is considered known clinical information and is not predicted. In the second stage, the wound image, together with the predicted characteristics and wound location, is input into two specialized models—WoundQwen\_risk for infection risk prediction and WoundQwen\_urgency for urgency level prediction. In the third stage, WoundQwen\_report utilizes the predictions from the first two stages along with the known location information to analyze images and generate a surgical wound report.
 
-<img src="D:\Desktop\Research\Project\Wound\SurgWound\SurgWound\imgs\model.png" style="zoom:67%;" />
+<img src="imgs\model.png" style="zoom:67%;" />
 
 
 
-## Environment
+## Requirement
 
-
+see `requirement.txt`
 
 ## Code Usage
 

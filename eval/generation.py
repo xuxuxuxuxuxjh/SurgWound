@@ -111,7 +111,7 @@ def predict_single_field(image_path, field_name, model, tokenizer):
         return "Error"
 
 # 读取数据
-path = 'train_question.json'
+path = ''
 
 data_list = []
 with open(path, 'r') as f:

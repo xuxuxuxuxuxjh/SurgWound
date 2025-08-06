@@ -18,7 +18,7 @@ OPTIONS = {
 
 
 
-path = '/fs/ess/PCON0023/xjh/data/wound_7_8/train_question_processed_enhancement2_sampled.json'
+path = ''
 
 data_list = []
 with open(path, 'r') as f:

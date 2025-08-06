@@ -41,7 +41,7 @@ report_processed_list = []
 
 print(len(report_processed_list))
 
-path = 'train_report.json'
+path = ''
 
 df = pd.read_excel('records_processed.xlsx')
 

@@ -18,7 +18,7 @@ OPTIONS = {
 }
 
 
-path = 'train_question.json'
+path = ''
 
 data_list = []
 with open(path, 'r') as f:

@@ -94,7 +94,7 @@ if os.path.exists(save_file):
         print(f"读取现有xlsx文件时出错: {e}")
         existing_data = {}
 
-data_path = 'test_report.json'
+data_path = ''
 data_list = []
 try:
     with open(data_path, 'r') as f:

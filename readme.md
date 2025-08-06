@@ -21,7 +21,7 @@ Each image is accompanied by high-quality labels covering six surgical wound cha
 
 **SurgWound-Bench** is the first multimodal benchmark for surgical wound analysis, which includes two tasks: SurgWound-VQA and SurgWound-Report
 
-![](imgs\Architecture.png)
+<img src="imgs\Architecture.png" style="zoom:100%;" />
 
 
 

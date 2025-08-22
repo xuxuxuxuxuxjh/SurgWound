@@ -125,3 +125,20 @@ Modify `/train/LLaMA-Factory/examples/train_lora/qwen2_5vl_lora_sft.yaml` to set
   ```
 
   
+
+## Citation
+
+```
+@misc{xu2025surgwoundbenchbenchmarksurgicalwound,
+      title={SurgWound-Bench: A Benchmark for Surgical Wound Diagnosis}, 
+      author={Jiahao Xu and Changchang Yin and Odysseas Chatzipanagiotou and Diamantis Tsilimigras and Kevin Clear and Bingsheng Yao and Dakuo Wang and Timothy Pawlik and Ping Zhang},
+      year={2025},
+      eprint={2508.15189},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.15189}, 
+}
+```
+
+
+

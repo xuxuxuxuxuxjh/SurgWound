@@ -2,26 +2,28 @@
 
 The SurgWound dataset is publicly accessible at [huggingface](https://huggingface.co/datasets/xuxuxuxuxu/SurgWound).
 
+Published paper: [npj Digital Medicine](https://doi.org/10.1038/s41746-026-02791-3) · Preprint: [arXiv:2508.15189](https://arxiv.org/abs/2508.15189)
+
 This repository contains the official PyTorch implementation of the following paper:
 
-> SurgWound-Bench: A Benchmark for Surgical Wound Diagnosis
+> SurgWound-Bench: a benchmark for surgical wound diagnosis
 >
-> Jiahao Xu, Changchang Yin, Odysseas Chatzipanagiotou, Diamantis Tsilimigras, Kevin Clear, Bingsheng Yao, Dakuo Wang, Timothy Pawlik, Ping Zhang
+> Jiahao Xu, Changchang Yin, Odysseas P. Chatzipanagiotou, Diamantis I. Tsilimigras, Kevin Clear, Bingsheng Yao, Weidan Cao, Dakuo Wang, Timothy M. Pawlik, Ping Zhang
 >
-> Abstract: Surgical site infection (SSI) is one of the most common and costly healthcare-associated infections and and surgical wound care remains a significant clinical challenge in preventing SSIs and improving patient outcomes. 
-> While recent studies have explored the use of deep learning for preliminary surgical wound screening, progress has been hindered by concerns over data privacy and the high costs associated with expert annotation. Currently, no publicly available dataset or benchmark encompasses various types of surgical wounds, resulting in the absence of an open-source Surgical-Wound screening tool. To address this gap: (1) we present SurgWound, the first open-source dataset featuring a diverse array of surgical wound types. It contains 697 surgical wound images annotated by 3 professional surgeons with eight fine-grained clinical attributes. (2) Based on SurgWound, we introduce the first benchmark for surgical wound diagnosis, which includes visual question answering (VQA) and report generation tasks to comprehensively evaluate model performance. (3) Furthermore, we propose a three-stage learning framework, WoundQwen, for surgical wound diagnosis. In the first stage, we employ five independent MLLMs to accurately predict specific surgical wound characteristics. In the second stage, these predictions serve as additional knowledge inputs to two MLLMs responsible for diagnosing outcomes, which assess infection risk and guide subsequent interventions. In the third stage, we train a MLLM that integrates the diagnostic results from the previous two stages to produce a comprehensive report. This three-stage framework can analyze detailed surgical wound characteristics and provide subsequent instructions to patients based on surgical images, paving the way for personalized wound care, timely intervention, and improved patient outcomes.
+> Abstract: Surgical site infection (SSI) is one of the most common and costly healthcare-associated infections, and surgical wound care remains a significant clinical challenge in preventing SSIs and improving patient outcomes.
+> While recent studies have explored the use of deep learning for preliminary surgical wound screening, progress has been hindered by concerns over data privacy and the high costs associated with expert annotation. Currently, no publicly available dataset or benchmark encompasses various types of surgical wounds, resulting in the absence of an open-source Surgical-Wound screening tool. To address this gap: (1) we present SurgWound, the first open-source dataset featuring a diverse array of surgical wound types. It contains 686 surgical wound images annotated by 3 professional surgeons with eight fine-grained clinical attributes. (2) Based on SurgWound, we introduce the first benchmark for surgical wound diagnosis, which includes visual question answering (VQA) and report generation tasks to comprehensively evaluate model performance. (3) Furthermore, we propose a three-stage learning framework, WoundQwen, for surgical wound diagnosis. In the first stage, we employ five independent MLLMs to accurately predict specific surgical wound characteristics. In the second stage, these predictions serve as additional knowledge inputs to two MLLMs responsible for diagnosing outcomes, which assess infection risk and guide subsequent interventions. In the third stage, we train a MLLM that integrates the diagnostic results from the previous two stages to produce a comprehensive report. This three-stage framework can analyze detailed surgical wound characteristics and provide subsequent instructions to patients based on surgical images, paving the way for personalized wound care, timely intervention, and improved patient outcomes.
 
 
 
 ## SurgWound Dataset and Benchmark
 
 **SurgWound** is the first open-source dataset for surgical wound analysis across multiple procedure types.
-SurgWound comprises 697 surgical wound images, each annotated by surgical experts at The Ohio State University Wexner Medical Center (OSWUMC).
+SurgWound comprises 686 surgical wound images, each annotated by surgical experts at The Ohio State University Wexner Medical Center (OSWUMC). The images are divided into 480 training, 69 validation, and 137 test images.
 Each image is accompanied by high-quality labels covering six surgical wound characteristic attributes and two diagnostic outcomes attributes.
 
 **SurgWound-Bench** is the first multimodal benchmark for surgical wound analysis, which includes two tasks: SurgWound-VQA and SurgWound-Report
 
-<img src="imgs\Architecture.png" style="zoom:100%;" />
+<img src="imgs/Architecture.png" style="zoom:100%;" />
 
 
 
@@ -29,7 +31,7 @@ Each image is accompanied by high-quality labels covering six surgical wound cha
 
  In the first stage, five of the six wound characteristics are predicted by specialized models: *Healing Status*, *Closure Method*, *Exudate Type*, *Erythema*, and *Edema*. *Location* is considered known clinical information and is not predicted. In the second stage, the wound image, together with the predicted characteristics and wound location, is input into two specialized models—WoundQwen\_risk for infection risk prediction and WoundQwen\_urgency for urgency level prediction. In the third stage, WoundQwen\_report utilizes the predictions from the first two stages along with the known location information to analyze images and generate a surgical wound report.
 
-<img src="imgs\model.png" style="zoom:67%;" />
+<img src="imgs/model.png" style="zoom:67%;" />
 
 
 
@@ -129,16 +131,15 @@ Modify `/train/LLaMA-Factory/examples/train_lora/qwen2_5vl_lora_sft.yaml` to set
 ## Citation
 
 ```
-@misc{xu2025surgwoundbenchbenchmarksurgicalwound,
-      title={SurgWound-Bench: A Benchmark for Surgical Wound Diagnosis}, 
-      author={Jiahao Xu and Changchang Yin and Odysseas Chatzipanagiotou and Diamantis Tsilimigras and Kevin Clear and Bingsheng Yao and Dakuo Wang and Timothy Pawlik and Ping Zhang},
-      year={2025},
-      eprint={2508.15189},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.15189}, 
+@article{xu2026surgwoundbench,
+      title={SurgWound-Bench: a benchmark for surgical wound diagnosis},
+      author={Xu, Jiahao and Yin, Changchang and Chatzipanagiotou, Odysseas P. and Tsilimigras, Diamantis I. and Clear, Kevin and Yao, Bingsheng and Cao, Weidan and Wang, Dakuo and Pawlik, Timothy M. and Zhang, Ping},
+      journal={npj Digital Medicine},
+      year={2026},
+      month={May},
+      day={23},
+      doi={10.1038/s41746-026-02791-3},
+      url={https://doi.org/10.1038/s41746-026-02791-3},
 }
 ```
-
-
 

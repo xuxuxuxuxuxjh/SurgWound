@@ -1,6 +1,7 @@
 # SurgWound-Bench: A Benchmark for Surgical Wound Diagnosis
 
 The SurgWound dataset is publicly accessible at [huggingface](https://huggingface.co/datasets/xuxuxuxuxu/SurgWound).
+The WoundQwen model checkpoints are available at [Hugging Face](https://huggingface.co/xuxuxuxuxu/WoundQwen).
 
 Published paper: [npj Digital Medicine](https://doi.org/10.1038/s41746-026-02791-3) · Preprint: [arXiv:2508.15189](https://arxiv.org/abs/2508.15189)
 

@@ -143,3 +143,13 @@ Modify `/train/LLaMA-Factory/examples/train_lora/qwen2_5vl_lora_sft.yaml` to set
 }
 ```
 
+## License
+
+The original code in this repository is released under the MIT License.
+
+The code under `train/LLaMA-Factory/` includes LLaMA-Factory code and remains
+subject to the Apache License 2.0 and its accompanying notices. Other
+third-party components retain their respective licenses.
+
+The SurgWound dataset and associated medical images may be subject to separate
+terms. Please check the dataset documentation before use.
